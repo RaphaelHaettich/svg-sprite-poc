@@ -1,0 +1,64 @@
+<html lang="en">
+
+<head>
+	<title>svg sprite test</title>
+	<link rel="stylesheet" type="text/css" href="dist/main.css">
+</head>
+
+<body>
+	<script>
+    (function(a) {
+      var b = a.getElementsByTagName("script"),
+        c = b[b.length - 1],
+        d = new XMLHttpRequest();
+      (d.onload = function() {
+        var e = a.createElement("div");
+        (e.innerHTML = this.responseText),
+          (e.style.display = "none"),
+          c.parentNode.insertBefore(e, c);
+      }),
+        d.open("get", "dist/svgsprite.svg?123115", !0),
+        d.send();
+    })(document);	
+  </script>
+	<svg class="sprite sprite-add">
+		<use xlink:href="#sprite-add" />
+	</svg>
+	<svg class="sprite sprite-credit">
+		<use xlink:href="#sprite-credit" />
+	</svg>
+    <label class="container">
+		<svg class="sprite sprite-credit">
+            <use xlink:href="#sprite-credit" />
+        </svg>
+	</label>
+    <svg class="sprite sprite-closebutton">
+		<use xlink:href="#sprite-closebutton" />
+	</svg>
+    <label class="container">
+		<svg class="sprite sprite-closebutton">
+			<use xlink:href="#sprite-closebutton" />
+		</svg>
+	</label>
+
+	<style>
+        .sprite {
+            width: 100px;
+            height: 100px
+        }
+		.sprite-add {
+			fill: green;
+		}
+		.container .sprite-closebutton {
+			fill: yellow;
+			color: blue;
+        }
+        .container .sprite-credit {
+			fill: yellow;
+			stroke: blue;
+		}
+	</style>
+
+</body>
+
+</html>
